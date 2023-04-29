@@ -1,0 +1,239 @@
+*{box-sizing: border-box;}
+:root {
+
+    /* fonts */
+    --font-body: 'Josefin Sans', sans-serif;
+    /* colors */
+    --light-gray: #BABABA;
+    --gray: #8D8D8D;
+    --light-blue: #A6CBEB;
+    --dark-blue: #4B95D5;
+    --dark-gray: #3A3A3A;
+    --white: #FFFFFF;
+
+}
+body{
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 15px;
+}
+header, footer {background-color: white;}
+main {padding: 0.5rem;}
+
+/* ------------- HEADER ------------- */
+
+#top-header{
+    display: grid;
+    padding: .5rem;
+}
+#logo{
+    grid-row: 1;
+}
+#top-header a{
+    grid-row: 1;
+    text-align: right;
+    color: var(--dark-gray);
+    text-decoration: none;
+}
+#top-header a:hover{
+color: var(--dark-blue);
+}
+
+/* ------------- nav ------------- */
+nav {
+    background-color: var(--dark-gray);
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+	padding: 1rem 0;
+    text-align: center;
+    margin: 0px .7rem;
+}
+nav ul li a:hover {
+    background-color: var(--dark-blue);
+    color: black;
+}
+
+
+
+/* ------------- FOOTER ------------- */
+footer{
+    text-align: center;
+}
+footer p{ margin: 0; padding: 15px;}
+.separator {
+    border-top: 5px solid var(--dark-gray);
+    margin-top: 2%;
+  }
+/* ------------- HOME ------------- */
+
+.home-main h1, .home-main h2{
+    font-size: 20px;
+}
+
+.hero{
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns:30% 40% 30%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas: 
+    "hero-txt hero-txt hero-txt"
+    ". hero-btn .";
+}
+
+.hero-img{
+    width: 100%;
+    background-image: url('../images/car.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+    margin: 0;
+    padding: 0%;
+    grid-area: hero-txt;
+}
+.hero-txt{width: 130px;}
+.hero-txt h2, .hero-txt p{
+    margin: 0;
+    padding: 0%;
+    font-size: 13.5px;
+    color: var(--dark-blue);
+}
+.blue-btn{
+    margin: auto;
+    color: var(--dark-gray);
+    width: 40%;
+    padding: 16px;
+    text-align: center;
+    background-color: var(--dark-blue);
+    border: .3px solid var(--dark-gray);
+    text-decoration: none;
+}
+.hero-btn{
+    width: 160px;
+    text-align: center;
+    grid-area: hero-btn;
+}
+
+.reviews ul li{
+    padding: .5rem;
+}
+
+div.upgrades-cards{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat(2, 50%); 
+    grid-template-areas: 
+    " flux flam"
+    "bumper hub";
+    gap: 7% 2%;
+}
+
+.flux-capacitor, .flam-decals,
+.bumper-stickers,.hub-caps {
+    text-align: center;
+}
+.flux-img, .flam-img ,
+.bumper-img ,.hub-img{
+    width: 100% ;
+    max-height: 75%;
+    min-height: 75%;
+    margin: 1%;
+    background-color: var(--dark-blue);
+    border: .2px solid var(--dark-gray);
+}
+
+.flux-capacitor{grid-area: flux;}
+.flam-decals{grid-area: flam;}
+.bumper-stickers{grid-area: bumper;}
+.hub-caps{grid-area: hub;}
+
+.flux-img img ,.flam-img img, 
+.bumper-img img ,.hub-img img{
+    margin: auto;
+    width: 100%;
+    max-width: 140px;
+    min-width: 140px;
+    max-height: 60px;
+    min-height: 60px;
+    padding: 0px 40px;
+}
+
+@media only screen and (min-width: 63rem) {
+
+    .home-main h1{
+        font-size: 30px;
+    }
+    .home-main h2{
+
+    }
+    html{
+        background-color: #3A3A3A;
+        border-radius: 5px;
+        border: 5px solid var(--dark-blue);
+        margin:1% 9%;
+    }
+    
+    .hero{
+        background-image: url('../images/car.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 600px;
+        display: grid;
+        grid-template-columns:25% 25% 25% 25%;
+        grid-template-rows: 100%;
+    }
+
+    .hero-img{
+        background-image: none;
+        margin: 0;
+        padding: 0%;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .hero-txt{width: 200px; margin: 0% 0% 10% 15%;}
+    .hero-txt h2, .hero-txt p{
+        margin: 0;
+        padding: 0%;
+        font-size: 25px;
+        color: var(--dark-blue);
+    }
+    .blue-btn{
+        width: 65%;
+    }
+    .hero-btn{
+        /* margin: 5% auto auto auto; */
+        margin: 150px auto auto 15%;
+        padding: 5%;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .container {
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: 
+        "upgrades reviews";
+    }
+    .reviews{grid-area: reviews; margin: 0 auto;}
+    .upgrades{grid-area: upgrades; }
+
+    .flux-img, .flam-img ,.bumper-img ,.hub-img{
+        max-height: 70%;
+    }
+}
